@@ -8,7 +8,6 @@ import edu.wpi.first.wpilibj.IterativeRobot;
 import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.command.Scheduler;
 import edu.wpi.first.wpilibj.livewindow.LiveWindow;
-import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 
 /**
@@ -23,7 +22,6 @@ public class Robot extends IterativeRobot {
 	public static OI oi;
 
 	Command autonomousCommand;
-	SendableChooser chooser;
 
 	public static BallIntake ballIntake;
 	public static BallShooter ballShooter;
@@ -39,10 +37,11 @@ public class Robot extends IterativeRobot {
 		ballIntake = new BallIntake();
 		ballShooter = new BallShooter();
 		driveTrain = new DriveTrain();
-		chooser = new SendableChooser();
 		// chooser.addDefault("Default Auto", new ExampleCommand());
 		// chooser.addObject("My Auto", new MyAutoCommand());
-		SmartDashboard.putData("Auto mode", chooser);
+		SmartDashboard.putData("Drive Train", driveTrain);
+		SmartDashboard.putData("Ball Intake", ballIntake);
+		SmartDashboard.putData("Ball Shooter", ballShooter);
 	}
 
 	/**
@@ -70,7 +69,7 @@ public class Robot extends IterativeRobot {
 	 * to the switch structure below with additional strings & commands.
 	 */
 	public void autonomousInit() {
-		autonomousCommand = (Command) chooser.getSelected();
+//		autonomousCommand = (Command) chooser.getSelected();
 
 		/*
 		 * String autoSelected = SmartDashboard.getString("Auto Selector",
@@ -114,4 +113,14 @@ public class Robot extends IterativeRobot {
 	public void testPeriodic() {
 		LiveWindow.run();
 	}
+
+	/**
+	 * The log method puts interesting information to the SmartDashboard.
+	 */
+	private void log() {
+		ballIntake.log();
+		ballShooter.log();
+		driveTrain.log();
+	}
+
 }
