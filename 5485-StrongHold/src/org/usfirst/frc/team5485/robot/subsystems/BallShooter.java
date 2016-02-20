@@ -7,6 +7,7 @@ package org.usfirst.frc.team5485.robot.subsystems;
 import edu.wpi.first.wpilibj.CANTalon;
 import edu.wpi.first.wpilibj.DigitalInput;
 import edu.wpi.first.wpilibj.SpeedController;
+import edu.wpi.first.wpilibj.Talon;
 import edu.wpi.first.wpilibj.command.Subsystem;
 import edu.wpi.first.wpilibj.livewindow.LiveWindow;
 
@@ -27,8 +28,8 @@ public class BallShooter extends Subsystem {
 		 contact = new DigitalInput(4);
 
 		// Let's show everything on the LiveWindow
-		LiveWindow.addActuator("Ball Shooter", "Left  Motor", (CANTalon) leftMotor);
-		LiveWindow.addActuator("Ball Shooter", "Right Motor", (CANTalon) rightMotor);
+		LiveWindow.addActuator("Ball Shooter", "Left  Motor", (Talon) leftMotor);
+		LiveWindow.addActuator("Ball Shooter", "Right Motor", (Talon) rightMotor);
 		// LiveWindow.addActuator("ballIntake", "Limit Switch", contact);
 	}
 

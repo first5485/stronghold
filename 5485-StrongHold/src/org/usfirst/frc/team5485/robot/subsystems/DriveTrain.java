@@ -7,6 +7,7 @@ import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.Joystick.AxisType;
 import edu.wpi.first.wpilibj.RobotDrive;
 import edu.wpi.first.wpilibj.SpeedController;
+import edu.wpi.first.wpilibj.Talon;
 import edu.wpi.first.wpilibj.command.Subsystem;
 import edu.wpi.first.wpilibj.livewindow.LiveWindow;
 
@@ -27,9 +28,9 @@ public class DriveTrain extends Subsystem {
 		drive = new RobotDrive(left_motor, right_motor);
 
 		// Let's show everything on the LiveWindow
-		LiveWindow.addActuator("Drive Train", "Left Motor", (CANTalon) left_motor);
+		LiveWindow.addActuator("Drive Train", "Left Motor", (Talon) left_motor);
 		LiveWindow.addActuator("Drive Train", "Right Motor",
-				(CANTalon) right_motor);
+				(Talon) right_motor);
 	}
 
 	/**
