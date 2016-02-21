@@ -4,7 +4,8 @@
  */
 package org.usfirst.frc.team5485.robot.subsystems;
 
-import edu.wpi.first.wpilibj.CANTalon;
+import org.usfirst.frc.team5485.robot.PortsButtons;
+
 import edu.wpi.first.wpilibj.DigitalInput;
 import edu.wpi.first.wpilibj.SpeedController;
 import edu.wpi.first.wpilibj.Talon;
@@ -22,7 +23,7 @@ public class BallIntake extends Subsystem {
 
 	public BallIntake() {
 		super();
-		motor = new CANTalon(7);
+		motor = new Talon(PortsButtons.MC_BALL_INTAKE);
 		contact = new DigitalInput(0);
 
 		// Let's show everything on the LiveWindow

@@ -16,12 +16,7 @@ public class OI {
 
 	private Joystick joy = new Joystick(0);
 
-	private static int joyButtonA = 0;
-	private static int joyButtonB = 1;
-	private static int joyButtonX = 2;
-	private static int joyButtonY = 3;
-	private static int joyButtonLB = 4;
-	private static int joyButtonRB = 5;
+
 
 	public Joystick getJoystick() {
 		return joy;
@@ -38,10 +33,10 @@ public class OI {
 		 */
 
 		// Create some buttons
-		JoystickButton shooterShoot = new JoystickButton(joy, joyButtonA);
-		JoystickButton shooterLoad = new JoystickButton(joy, joyButtonB);
-		JoystickButton intakeSuck = new JoystickButton(joy, joyButtonX);
-		JoystickButton intakeSpit = new JoystickButton(joy, joyButtonY);
+		JoystickButton shooterShoot = new JoystickButton(joy, PortsButtons.JOYBTN_A);
+		JoystickButton shooterLoad = new JoystickButton(joy, PortsButtons.JOYBTN_B);
+		JoystickButton intakeSuck = new JoystickButton(joy, PortsButtons.JOYBTN_X);
+		JoystickButton intakeSpit = new JoystickButton(joy, PortsButtons.JOYBTN_Y);
 
 		SmartDashboard.putData("Intake Ball", new SuckBall());
 		SmartDashboard.putData("Spit Out Ball", new SpitBall());

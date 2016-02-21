@@ -4,7 +4,8 @@
  */
 package org.usfirst.frc.team5485.robot.subsystems;
 
-import edu.wpi.first.wpilibj.CANTalon;
+import org.usfirst.frc.team5485.robot.PortsButtons;
+
 import edu.wpi.first.wpilibj.DigitalInput;
 import edu.wpi.first.wpilibj.SpeedController;
 import edu.wpi.first.wpilibj.Talon;
@@ -23,8 +24,8 @@ public class BallShooter extends Subsystem {
 
 	public BallShooter() {
 		super();
-		leftMotor = new CANTalon(4);
-		rightMotor = new CANTalon(5);
+		leftMotor = new Talon(PortsButtons.MC_BALL_SHOOTER_LEFT);
+		rightMotor = new Talon(PortsButtons.MC_BALL_SHOOTER_RIGHT);
 		 contact = new DigitalInput(4);
 
 		// Let's show everything on the LiveWindow

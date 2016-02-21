@@ -1,8 +1,8 @@
 package org.usfirst.frc.team5485.robot.subsystems;
 
+import org.usfirst.frc.team5485.robot.PortsButtons;
 import org.usfirst.frc.team5485.robot.commands.TankDriveWithJoystick;
 
-import edu.wpi.first.wpilibj.CANTalon;
 import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.Joystick.AxisType;
 import edu.wpi.first.wpilibj.RobotDrive;
@@ -22,8 +22,8 @@ public class DriveTrain extends Subsystem {
 
 	public DriveTrain() {
 		super();
-		left_motor = new CANTalon(1);
-		right_motor = new CANTalon(2);
+		left_motor = new Talon(PortsButtons.MC_DRIVE_LEFT);
+		right_motor = new Talon(PortsButtons.MC_DRIVE_RIGHT);
 
 		drive = new RobotDrive(left_motor, right_motor);
 
@@ -64,7 +64,7 @@ public class DriveTrain extends Subsystem {
 	 *            The ps3 style joystick to use to drive tank style.
 	 */
 	public void drive(Joystick joy) {
-		drive(-joy.getY(), -joy.getAxis(AxisType.kThrottle));
+		drive(joy.getRawAxis(PortsButtons.JOYAXS_LEFT_Y), joy.getRawAxis(PortsButtons.JOYAXS_RIGHT_Y));
 	}
 
 	/**

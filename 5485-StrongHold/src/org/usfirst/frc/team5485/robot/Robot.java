@@ -21,7 +21,6 @@ public class Robot extends IterativeRobot {
 
 	public static OI oi;
 
-	Command autonomousCommand;
 
 	public static BallIntake ballIntake;
 	public static BallShooter ballShooter;
@@ -33,15 +32,16 @@ public class Robot extends IterativeRobot {
 	 * used for any initialization code.
 	 */
 	public void robotInit() {
-		oi = new OI();
+		driveTrain = new DriveTrain();
 		ballIntake = new BallIntake();
 		ballShooter = new BallShooter();
-		driveTrain = new DriveTrain();
+		oi = new OI();
 		// chooser.addDefault("Default Auto", new ExampleCommand());
 		// chooser.addObject("My Auto", new MyAutoCommand());
 		SmartDashboard.putData("Drive Train", driveTrain);
 		SmartDashboard.putData("Ball Intake", ballIntake);
 		SmartDashboard.putData("Ball Shooter", ballShooter);
+		
 	}
 
 	/**
@@ -79,8 +79,8 @@ public class Robot extends IterativeRobot {
 		 */
 
 		// schedule the autonomous command (example)
-		if (autonomousCommand != null)
-			autonomousCommand.start();
+//		if (autonomousCommand != null)
+//			autonomousCommand.start();
 	}
 
 	/**
@@ -95,9 +95,9 @@ public class Robot extends IterativeRobot {
 		// teleop starts running. If you want the autonomous to
 		// continue until interrupted by another command, remove
 		// this line or comment it out.
-		if (autonomousCommand != null) {
-			autonomousCommand.cancel();
-		}
+//		if (autonomousCommand != null) {
+//			autonomousCommand.cancel();
+//		}
 	}
 
 	/**
