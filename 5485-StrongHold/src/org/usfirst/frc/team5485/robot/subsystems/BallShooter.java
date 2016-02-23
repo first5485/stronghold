@@ -6,11 +6,10 @@ package org.usfirst.frc.team5485.robot.subsystems;
 
 import org.usfirst.frc.team5485.robot.PortsButtons;
 
+import edu.wpi.first.wpilibj.CANTalon;
 import edu.wpi.first.wpilibj.DigitalInput;
 import edu.wpi.first.wpilibj.SpeedController;
-import edu.wpi.first.wpilibj.Talon;
 import edu.wpi.first.wpilibj.command.Subsystem;
-import edu.wpi.first.wpilibj.livewindow.LiveWindow;
 
 /**
  * The ballIntake subsystem is a simple system with a motor for opening and
@@ -24,13 +23,15 @@ public class BallShooter extends Subsystem {
 
 	public BallShooter() {
 		super();
-		leftMotor = new Talon(PortsButtons.MC_BALL_SHOOTER_LEFT);
-		rightMotor = new Talon(PortsButtons.MC_BALL_SHOOTER_RIGHT);
-		 contact = new DigitalInput(4);
+		leftMotor = new CANTalon(PortsButtons.MC_BALL_SHOOTER_LEFT);
+		rightMotor = new CANTalon(PortsButtons.MC_BALL_SHOOTER_RIGHT);
+		contact = new DigitalInput(4);
 
 		// Let's show everything on the LiveWindow
-		LiveWindow.addActuator("Ball Shooter", "Left  Motor", (Talon) leftMotor);
-		LiveWindow.addActuator("Ball Shooter", "Right Motor", (Talon) rightMotor);
+		// LiveWindow.addActuator("Ball Shooter", "Left  Motor", (Talon)
+		// leftMotor);
+		// LiveWindow.addActuator("Ball Shooter", "Right Motor", (Talon)
+		// rightMotor);
 		// LiveWindow.addActuator("ballIntake", "Limit Switch", contact);
 	}
 
