@@ -45,16 +45,16 @@ public class BallShooter extends Subsystem {
 	 * Set the ballIntake motor to move in the open direction.
 	 */
 	public void shoot() {
-		leftMotor.set(-1);
-		rightMotor.set(1);
+		leftMotor.set(1);
+		rightMotor.set(-1);
 	}
 
 	/**
 	 * Set the ballIntake motor to move in the close direction.
 	 */
 	public void close() {
-		leftMotor.set(1);
-		rightMotor.set(-1);
+		leftMotor.set(-1);
+		rightMotor.set(1);
 	}
 
 	/**

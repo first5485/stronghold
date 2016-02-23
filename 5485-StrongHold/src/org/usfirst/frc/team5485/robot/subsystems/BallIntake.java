@@ -41,14 +41,14 @@ public class BallIntake extends Subsystem {
 	 * Set the ballIntake motor to move in the open direction.
 	 */
 	public void open() {
-		motor.set(-1);
+		motor.set(1);
 	}
 
 	/**
 	 * Set the ballIntake motor to move in the close direction.
 	 */
 	public void close() {
-		motor.set(1);
+		motor.set(-1);
 	}
 
 	/**
