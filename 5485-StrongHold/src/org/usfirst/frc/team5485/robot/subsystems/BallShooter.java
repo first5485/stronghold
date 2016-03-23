@@ -7,7 +7,6 @@ package org.usfirst.frc.team5485.robot.subsystems;
 import org.usfirst.frc.team5485.robot.PortsButtons;
 
 import edu.wpi.first.wpilibj.SpeedController;
-import edu.wpi.first.wpilibj.Talon;
 import edu.wpi.first.wpilibj.command.Subsystem;
 import edu.wpi.first.wpilibj.livewindow.LiveWindow;
 import edu.wpi.first.wpilibj.livewindow.LiveWindowSendable;

@@ -113,13 +113,5 @@ public class Robot extends IterativeRobot {
 		LiveWindow.run();
 	}
 
-	/**
-	 * The log method puts interesting information to the SmartDashboard.
-	 */
-	private void log() {
-		ballIntake.log();
-		ballShooter.log();
-		driveTrain.log();
-	}
 
 }
