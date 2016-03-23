@@ -6,9 +6,10 @@ package org.usfirst.frc.team5485.robot.subsystems;
 
 import org.usfirst.frc.team5485.robot.PortsButtons;
 
-import edu.wpi.first.wpilibj.CANTalon;
 import edu.wpi.first.wpilibj.SpeedController;
 import edu.wpi.first.wpilibj.command.Subsystem;
+import edu.wpi.first.wpilibj.livewindow.LiveWindow;
+import edu.wpi.first.wpilibj.livewindow.LiveWindowSendable;
 
 /**
  * The ballIntake subsystem is a simple system with a motor for opening and
@@ -21,12 +22,11 @@ public class BallIntake extends Subsystem {
 
 	public BallIntake() {
 		super();
-		motor = new CANTalon(PortsButtons.MC_BALL_INTAKE);
+		motor = PortsButtons.SpeedController(PortsButtons.MC_BALL_INTAKE);
 //		contact = new DigitalInput(0);
 
 		// Let's show everything on the LiveWindow
-		//LiveWindow.addActuator("Ball Intake", "Motor", motor);
-//		LiveWindow.addActuator("Ball Intake", "Ball Ready", );
+		LiveWindow.addActuator("Ball Intake", "Motor", (LiveWindowSendable) motor);
 	}
 
 	public void initDefaultCommand() {
@@ -61,6 +61,6 @@ public class BallIntake extends Subsystem {
 	 * the limit switch.
 	 */
 	public boolean isSucking() {
-		return true;
+		return false;
 	}
 }

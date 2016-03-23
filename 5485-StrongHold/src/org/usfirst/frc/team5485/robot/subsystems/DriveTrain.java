@@ -3,11 +3,12 @@ package org.usfirst.frc.team5485.robot.subsystems;
 import org.usfirst.frc.team5485.robot.PortsButtons;
 import org.usfirst.frc.team5485.robot.commands.TankDriveWithJoystick;
 
-import edu.wpi.first.wpilibj.CANTalon;
 import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.RobotDrive;
 import edu.wpi.first.wpilibj.SpeedController;
 import edu.wpi.first.wpilibj.command.Subsystem;
+import edu.wpi.first.wpilibj.livewindow.LiveWindow;
+import edu.wpi.first.wpilibj.livewindow.LiveWindowSendable;
 
 /**
  * The DriveTrain subsystem incorporates the sensors and actuators attached to
@@ -20,15 +21,16 @@ public class DriveTrain extends Subsystem {
 
 	public DriveTrain() {
 		super();
-		left_motor = new CANTalon(PortsButtons.MC_DRIVE_LEFT);
-		right_motor = new CANTalon(PortsButtons.MC_DRIVE_RIGHT);
+		left_motor = PortsButtons.SpeedController(PortsButtons.MC_DRIVE_LEFT);
+		right_motor = PortsButtons.SpeedController(PortsButtons.MC_DRIVE_RIGHT);
 
 		drive = new RobotDrive(left_motor, right_motor);
 
 		// Let's show everything on the LiveWindow
-//		LiveWindow.addActuator("Drive Train", "Left Motor", (Talon) left_motor);
-//		LiveWindow.addActuator("Drive Train", "Right Motor",
-//				(Talon) right_motor);
+		 LiveWindow.addActuator("Drive Train", "Left Motor", (LiveWindowSendable)
+		 left_motor);
+		 LiveWindow.addActuator("Drive Train", "Right Motor",
+		 (LiveWindowSendable) right_motor);
 	}
 
 	/**
@@ -62,7 +64,8 @@ public class DriveTrain extends Subsystem {
 	 *            The ps3 style joystick to use to drive tank style.
 	 */
 	public void drive(Joystick joy) {
-		drive(joy.getRawAxis(PortsButtons.JOYAXS_LEFT_Y), joy.getRawAxis(PortsButtons.JOYAXS_RIGHT_Y));
+		drive(joy.getRawAxis(PortsButtons.JOYAXS_LEFT_Y),
+				joy.getRawAxis(PortsButtons.JOYAXS_RIGHT_Y));
 	}
 
 	/**

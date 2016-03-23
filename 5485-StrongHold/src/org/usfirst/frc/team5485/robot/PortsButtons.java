@@ -1,5 +1,10 @@
 package org.usfirst.frc.team5485.robot;
 
+import org.usfirst.frc.team5485.robot.controllers.LWTalon;
+
+import edu.wpi.first.wpilibj.CANTalon;
+import edu.wpi.first.wpilibj.SpeedController;
+
 public class PortsButtons {
 	public final static int MC_DRIVE_RIGHT = 2;
 	public final static int MC_DRIVE_LEFT = 1;
@@ -16,4 +21,14 @@ public class PortsButtons {
 	
 	public final static int JOYAXS_LEFT_Y = 1;
 	public final static int JOYAXS_RIGHT_Y = 5;
+	
+	public static SpeedController SpeedController( int port) {
+		
+		if (Timings.USE_CAN) {
+			return new CANTalon(port);
+		}
+		else {             
+			return new LWTalon(port);
+		}
+	}
 }

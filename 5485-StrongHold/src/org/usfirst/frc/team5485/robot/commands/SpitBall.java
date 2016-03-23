@@ -5,6 +5,7 @@
 package org.usfirst.frc.team5485.robot.commands;
 
 import org.usfirst.frc.team5485.robot.Robot;
+import org.usfirst.frc.team5485.robot.Timings;
 
 import edu.wpi.first.wpilibj.command.Command;
 
@@ -16,7 +17,7 @@ public class SpitBall extends Command {
 
 	public SpitBall() {
 		requires(Robot.ballIntake);
-		setTimeout(1);
+		setTimeout(Timings.SPIT_OUT_SECONDS);
 	}
 
 	// Called just before this Command runs the first time
