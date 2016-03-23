@@ -5,6 +5,7 @@
 package org.usfirst.frc.team5485.robot.commands;
 
 import org.usfirst.frc.team5485.robot.Robot;
+import org.usfirst.frc.team5485.robot.Timings;
 
 import edu.wpi.first.wpilibj.command.Command;
 
@@ -16,7 +17,7 @@ public class ShootBall extends Command {
 
 	public ShootBall() {
 		requires(Robot.ballShooter);
-		setTimeout(1);
+		setTimeout(Timings.SHOOT_FOR_SECONDS);
 	}
 
 	// Called just before this Command runs the first time

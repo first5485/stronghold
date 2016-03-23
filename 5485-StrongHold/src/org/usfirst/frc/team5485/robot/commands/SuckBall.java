@@ -5,7 +5,9 @@
 package org.usfirst.frc.team5485.robot.commands;
 
 import edu.wpi.first.wpilibj.command.Command;
+
 import org.usfirst.frc.team5485.robot.Robot;
+import org.usfirst.frc.team5485.robot.Timings;
 
 /**
  * Closes the ballIntake for one second. Real robots should use sensors,
@@ -20,6 +22,7 @@ public class SuckBall extends Command {
 	// Called just before this Command runs the first time
 	protected void initialize() {
 		Robot.ballIntake.close();
+		setTimeout(Timings.SUCK_IN_SECONDS);
 	}
 
 	// Called repeatedly when this Command is scheduled to run
@@ -29,15 +32,12 @@ public class SuckBall extends Command {
 
 	// Make this return true when this Command no longer needs to run execute()
 	protected boolean isFinished() {
-		return Robot.ballIntake.isSucking();
+		return isTimedOut();
 	}
 
 	// Called once after isFinished returns true
 	protected void end() {
-		// NOTE: Doesn't stop in simulation due to lower friction causing the
-		// can to fall out
-		// + there is no need to worry about stalling the motor or crushing the
-		// can.
+
 		if (!Robot.isSimulation())
 			Robot.ballIntake.stop();
 	}
