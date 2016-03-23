@@ -19,13 +19,13 @@ import edu.wpi.first.wpilibj.command.Subsystem;
 public class BallShooter extends Subsystem {
 	private SpeedController leftMotor;
 	private SpeedController rightMotor;
-	private DigitalInput contact;
+//	private DigitalInput contact;
 
 	public BallShooter() {
 		super();
 		leftMotor = new CANTalon(PortsButtons.MC_BALL_SHOOTER_LEFT);
 		rightMotor = new CANTalon(PortsButtons.MC_BALL_SHOOTER_RIGHT);
-		contact = new DigitalInput(4);
+//		contact = new DigitalInput(4);
 
 		// Let's show everything on the LiveWindow
 		// LiveWindow.addActuator("Ball Shooter", "Left  Motor", (Talon)
@@ -69,7 +69,7 @@ public class BallShooter extends Subsystem {
 	 * Return true when the robot is grabbing an object hard enough to trigger
 	 * the limit switch.
 	 */
-	public boolean isShooting() {
-		return contact.get();
-	}
+//	public boolean isShooting() {
+////		return contact.get();
+//	}
 }
