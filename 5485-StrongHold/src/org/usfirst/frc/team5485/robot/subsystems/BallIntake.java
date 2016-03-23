@@ -53,7 +53,7 @@ public class BallIntake extends Subsystem {
 	 * Stops the ballIntake motor from moving.
 	 */
 	public void stop() {
-		motor.set(0);
+		motor.set(0); 
 	}
 
 	/**
