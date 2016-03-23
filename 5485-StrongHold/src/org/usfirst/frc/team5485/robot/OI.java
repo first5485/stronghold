@@ -25,11 +25,19 @@ public class OI {
 	public OI() {
 
 		/*
-		 * Joy Button A = 0 Joy Button B = 1 Joy Button X = 2 Joy Button Y = 3
-		 * Joy Button LB = 4 Joy Button RB = 5
+		 * Joy Button A = 0 
+		 * Joy Button B = 1 
+		 * Joy Button X = 2 
+		 * Joy Button Y = 3
+		 * Joy Button LB = 4 
+		 * Joy Button RB = 5
 		 * 
-		 * Joy Axes LX = 0 Joy Axes LY = 1 Joy Axes LT = 2 Joy Axes RT = 3 Joy
-		 * Axes RX = 4 Joy Axes RY = 5
+		 * Joy Axes LX = 0 
+		 * Joy Axes LY = 1 
+		 * Joy Axes LT = 2 
+		 * Joy Axes RT = 3 
+		 * Joy Axes RX = 4
+		 * Joy Axes RY = 5
 		 */
 
 		// Create some buttons

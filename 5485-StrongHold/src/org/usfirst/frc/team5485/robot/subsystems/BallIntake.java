@@ -6,11 +6,9 @@ package org.usfirst.frc.team5485.robot.subsystems;
 
 import org.usfirst.frc.team5485.robot.PortsButtons;
 
-import edu.wpi.first.wpilibj.DigitalInput;
+import edu.wpi.first.wpilibj.CANTalon;
 import edu.wpi.first.wpilibj.SpeedController;
-import edu.wpi.first.wpilibj.Talon;
 import edu.wpi.first.wpilibj.command.Subsystem;
-import edu.wpi.first.wpilibj.livewindow.LiveWindow;
 
 /**
  * The ballIntake subsystem is a simple system with a motor for opening and
@@ -19,16 +17,16 @@ import edu.wpi.first.wpilibj.livewindow.LiveWindow;
  */
 public class BallIntake extends Subsystem {
 	private SpeedController motor;
-	private DigitalInput contact;
+//	private DigitalInput contact;
 
 	public BallIntake() {
 		super();
-		motor = new Talon(PortsButtons.MC_BALL_INTAKE);
-		contact = new DigitalInput(0);
+		motor = new CANTalon(PortsButtons.MC_BALL_INTAKE);
+//		contact = new DigitalInput(0);
 
 		// Let's show everything on the LiveWindow
-		LiveWindow.addActuator("Ball Intake", "Motor", (Talon) motor);
-		LiveWindow.addActuator("Ball Intake", "Ball Ready", contact);
+		//LiveWindow.addActuator("Ball Intake", "Motor", motor);
+//		LiveWindow.addActuator("Ball Intake", "Ball Ready", );
 	}
 
 	public void initDefaultCommand() {
@@ -41,21 +39,21 @@ public class BallIntake extends Subsystem {
 	 * Set the ballIntake motor to move in the open direction.
 	 */
 	public void open() {
-		motor.set(-1);
+		motor.set(1);
 	}
 
 	/**
 	 * Set the ballIntake motor to move in the close direction.
 	 */
 	public void close() {
-		motor.set(1);
+		motor.set(-1);
 	}
 
 	/**
 	 * Stops the ballIntake motor from moving.
 	 */
 	public void stop() {
-		motor.set(0);
+		motor.set(0); 
 	}
 
 	/**
@@ -63,6 +61,6 @@ public class BallIntake extends Subsystem {
 	 * the limit switch.
 	 */
 	public boolean isSucking() {
-		return contact.get();
+		return true;
 	}
 }
